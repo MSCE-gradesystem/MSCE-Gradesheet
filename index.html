@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSCE End Semester Grade Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f7f2;
+            color: #4a2c2a;
+        }
+
+        /* Login Page Styles */
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .login-heading {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .login-box {
+            background-color: #fff7f0;
+            border: 1px solid #e0a96d;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid #e0a96d;
+            border-radius: 4px;
+        }
+
+        .login-box button {
+            background-color: #e0a96d;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* Marksheet Page Styles */
+        .marksheet-header {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .marksheet-header img {
+            height: 50px;
+            margin-right: 1rem;
+        }
+
+        .marksheet-header div {
+            text-align: center;
+            flex: 1;
+        }
+
+        .marksheet-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .marksheet-subtitle {
+            font-size: 1rem;
+            color: #6a4c49;
+        }
+
+        .student-info {
+            margin: 1rem 2rem;
+            font-size: 1rem;
+            color: #4a2c2a;
+        }
+
+        .marksheet-table {
+            width: 100%;
+            margin: 2rem auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .marksheet-table th, .marksheet-table td {
+            border: 1px solid #e0a96d;
+            padding: 0.75rem;
+        }
+
+        .marksheet-table th {
+            background-color: #fbe4d3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6a4c49;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage" class="login-container">
+        <h1 class="login-heading">MSCE - End Semester Grade Sheet</h1>
+        <div class="login-box">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <!-- Marksheet Page -->
+    <div id="marksheetPage" style="display: none;">
+        <div class="marksheet-header">
+            <img src="Institutional-Partner-Manipal-Academy-of-Higher-Education-690x485-1.webp" alt="Header Logo">
+            <div>
+                <div class="marksheet-title">Dept. of Commerce</div>
+                <div class="marksheet-subtitle">(A constituent unit of Manipal Academy of Higher Education, Manipal)</div>
+            </div>
+        </div>
+        <div class="student-info">
+            <p style="text-align: center; font-weight: bold; text-decoration: underline;">Grade Sheet</p>
+            <p>Reg No.: 242621188 <span style="float: right;">Section: B</span></p>
+            <p>Name: Taraknath Shaji</p>
+            <p>Branch: BBA</p>
+        </div>
+        <table class="marksheet-table">
+            <thead>
+                <tr>
+                    <th>Subject Code</th>
+                    <th>Subject Title</th>
+                    <th>Date</th>
+                    <th>Sem</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>BBAC 1201</td>
+                    <td>Marketing Management-Theory</td>
+                    <td>06-May-25</td>
+                    <td>II</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>BBAC 1203</td>
+                    <td>Cost And Management Accounting</td>
+                    <td>08-May-25</td>
+                    <td>II</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>BBAC 1202</td>
+                    <td>Managing People And Organizations</td>
+                    <td>10-May-25</td>
+                    <td>II</td>
+                    <td>Na-</td>
+                </tr>
+                <tr>
+                    <td>BBAC 1205</td>
+                    <td>Consumer Affairs</td>
+                    <td>13-May-25</td>
+                    <td>II</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>BBAC 12OE5</td>
+                    <td>Cross Cultural Dimensions</td>
+                    <td>19-May-25</td>
+                    <td>II</td>
+                    <td>C</td>
+                </tr>
+            </tbody>
+        </table>
+        <footer>
+            Note: The hosted website will be active until the next following day only.
+        </footer>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "242621188" && password === "pass@1882004") {
+                document.getElementById("loginPage").style.display = "none";
+                document.getElementById("marksheetPage").style.display = "block";
+            } else {
+                alert("Invalid username or password!");
+            }
+        }
+    </script>
+</body>
+</html>
